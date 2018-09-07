@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Input;
 
 namespace HW3
 {
@@ -38,6 +38,73 @@ namespace HW3
             catch(Exception exception)
             {
                 inputbox.Text = "Error!";
+            }
+        }
+
+        private void KeyboardEvent(object sender, KeyEventArgs e)
+        {
+           Button b = (Button) sender
+            
+            switch (e.Key.ToString())
+            {
+                case "0":
+                    Button.Perform
+                    break;
+                    
+                case "1":
+                    
+                    break;
+
+                case "2":
+
+                    break;
+
+                case "3":
+
+                    break;
+
+                case "4":
+
+                    break;
+
+                case "5":
+
+                    break;
+
+                case "6":
+                    break;
+
+                case "7":
+
+                    break;
+
+                case "8":
+
+                    break;
+
+                case "9":
+
+                    break;
+
+                case "*":
+
+                    break;
+
+                case "/":
+
+                    break;
+
+                case "+":
+
+                    break;
+
+                case "-":
+
+                    break;
+
+                case ".":
+
+                    break;
             }
         }
 
