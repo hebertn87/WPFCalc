@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace HW3
+namespace WPFCalc
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -43,67 +43,79 @@ namespace HW3
 
         private void KeyboardEvent(object sender, KeyEventArgs e)
         {
-           Button b = (Button) sender
-            
+                      
             switch (e.Key.ToString())
             {
-                case "0":
-                    Button.Perform
+                case "NumPad0":
+                    inputbox.Text += "0";
                     break;
                     
-                case "1":
-                    
+                case "NumPad1":
+                    inputbox.Text += "1";
                     break;
 
-                case "2":
-
+                case "NumPad2":
+                    inputbox.Text += "2";
                     break;
 
-                case "3":
-
+                case "NumPad3":
+                    inputbox.Text += "3";
                     break;
 
-                case "4":
-
+                case "NumPad4":
+                    inputbox.Text += "4";
                     break;
 
-                case "5":
-
+                case "NumPad5":
+                    inputbox.Text += "5";
                     break;
 
-                case "6":
+                case "NumPad6":
+                    inputbox.Text += "6";
                     break;
 
-                case "7":
-
+                case "NumPad7":
+                    inputbox.Text += "7";
                     break;
 
-                case "8":
-
+                case "NumPad8":
+                    inputbox.Text += "8";
                     break;
 
-                case "9":
-
+                case "NumPad9":
+                    inputbox.Text += "9";
                     break;
 
-                case "*":
-
+                case "Multiply":
+                    inputbox.Text += "*";
                     break;
 
-                case "/":
-
+                case "Divide":
+                    inputbox.Text += "/";
                     break;
 
-                case "+":
-
+                case "Add":
+                    inputbox.Text += "+";
                     break;
 
-                case "-":
-
+                case "Subtract":
+                    inputbox.Text += "-";
                     break;
 
-                case ".":
+                case "Decimal":
+                    inputbox.Text += ".";
+                    break;
 
+                case "Enter":
+                    try
+                    {
+                        ParseInputBox();
+                        history.Text = inputbox.Text + "\n" + history.Text;
+                    }
+                    catch (Exception exception)
+                    {
+                        inputbox.Text = "Error!";
+                    }
                     break;
             }
         }
@@ -169,9 +181,14 @@ namespace HW3
         }
          
         //Private method to clear all data from the input box
-        public void ClrEvent(object sender, RoutedEventArgs e)
+        private void ClrEvent(object sender, RoutedEventArgs e)
         {
             inputbox.Text = "";
+        }
+
+        private void MyCommand()
+        {
+            inputbox.Text = history.Text;
         }
     }
 }
